@@ -1,4 +1,4 @@
-[
+const clubs = [
   {
     name: "Agecroft Rowing Club",
     imageUrl:
