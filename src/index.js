@@ -8,6 +8,7 @@ const checkAnswer = (event) => {
 
   if (event.target.value === answer) {
     console.log("victory!");
+    newRound();
   } else {
     console.log("fail");
   }
