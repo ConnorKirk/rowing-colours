@@ -2,20 +2,38 @@ const img = document.querySelector(".blade");
 const button1 = document.querySelector("button:nth-child(1)");
 const button2 = document.querySelector("button:nth-child(2)");
 const button3 = document.querySelector("button:nth-child(3)");
+const attemptsCounter = document.querySelector("span.attempts");
+const scoreCounter = document.querySelector("span.correct");
 
-function shuffle(a) {
+let score = 0;
+let attempts = 0;
+
+const incrementScore = () => {
+  score++;
+  scoreCounter.innerText = score;
+};
+
+const incrementAttempts = () => {
+  attempts++;
+  attemptsCounter.innerText = attempts;
+};
+
+const shuffle = (a) => {
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
-}
+};
 
 const checkAnswer = (event) => {
   event.preventDefault();
 
+  incrementAttempts();
+
   if (event.target.value === answer) {
     console.log("victory!");
+    incrementScore();
     newRound();
   } else {
     console.log("fail");
