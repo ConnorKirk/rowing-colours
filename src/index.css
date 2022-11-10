@@ -5,6 +5,7 @@
   margin: auto;
   max-width: 800px;
   padding-top: 20px;
+  padding-inline: 10px;
 
   font-family: 'Roboto', sans-serif;
 }
